@@ -28,8 +28,9 @@ int main(int argc, char** argv){
         fgets(buf, 100, stdin);
         num2 = atoi(buf);
         res = num1/num2;
-        printf("%s / %s is %d with a remainder of %d",\
+        printf("%d / %d is %d with a remainder of %d\n",\
         num1, num2, res, num1 - num2*res);
-        return 0;
+        
     }
+    return 0;
 }
