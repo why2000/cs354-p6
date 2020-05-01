@@ -18,6 +18,20 @@ void handler_SIGFPE(int sig){
 }
 
 int main(int argc, char** argv){
+    struct sigaction actfpe, actint;
+    // for SIGFPE
+    memset(&actfpe, 0, sizeof(actfpe));
+    actfpe.sa_handler = handler_SIGFPE;
+    if(sigaction(SIGFPE, &actfpe, NULL)<0){
+        perror("Error binding sigaction for SIGFPE!\n");
+        return 1;
+    }
+    // for SIGINT
+    memset(&actint, 0, sizeof(actint));
+    actint.sa_handler = handler_SIGINT;
+    if(sigaction(SIGINT, &actint, NULL)<0){
+        perror("Error binding sigaction for SIGINT!\n");
+    }
     while(1){
         char buf[100];
         int num1, num2, res;
