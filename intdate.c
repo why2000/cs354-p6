@@ -30,22 +30,25 @@ void handler_SIGALRM(int sig){
 }
 
 
-int main(void){
+int main(int argc, char** argv){
     printf("Pid and time will be printed every 3 seconds.\n");
     printf("Enter ^C to end the program.\n");
     alarm(alrm_time);
     struct sigaction actalrm, actusr1, actint;
+    // for SIGALRM
     memset(&actalrm, 0, sizeof(actalrm));
     actalrm.sa_handler = handler_SIGALRM;
     if(sigaction(SIGALRM, &actalrm, NULL)<0){
         perror("Error binding sigaction for SIGALRM!\n");
         return 1;
     }
+    // for SIGUSR1
     memset(&actusr1, 0, sizeof(actusr1));
     actusr1.sa_handler = handler_SIGUSR1;
     if(sigaction(SIGUSR1, &actusr1, NULL)<0){
         perror("Error binding sigaction for SIGUSR1!\n");
     }
+    // for SIGINT
     memset(&actint, 0, sizeof(actint));
     actint.sa_handler = handler_SIGINT;
     if(sigaction(SIGINT, &actint, NULL)<0){
