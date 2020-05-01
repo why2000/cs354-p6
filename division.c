@@ -1,3 +1,30 @@
+///////////////////////////////////////////////////////////////////////////////
+// Main File:        division.c
+// This File:        division.c
+// Other Files:      intdate.c, sendsig.c (both irrelative to this file)
+// Semester:         CS 354 Spring 2020
+//
+// Author:           Hanyuan Wu
+// Email:            hwu384@wisc.edu
+// CS Login:         hanyuan
+//
+/////////////////////////// OTHER SOURCES OF HELP /////////////////////////////
+//                   fully acknowledge and credit all sources of help,
+//                   other than Instructors and TAs.
+//
+// Persons:          Identify persons by name, relationship to you, and email.
+//                   Describe in detail the the ideas and help they provided.
+//
+// Online sources:   avoid web searches to solve your problems, but if you do
+//                   search, be sure to include Web URLs and description of
+//                   of any information you find.
+////////////////////////////////////////////////////////////////////////////////
+//
+// Copyright 2013,2019-2020
+// Posting or sharing this file is prohibited, including any changes/additions.
+//
+////////////////////////////////////////////////////////////////////////////////
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<unistd.h>
