@@ -8,17 +8,24 @@
 
 int main(int argc, char** argv){
     // checking cmdline arg
-    if(argc != 2) print("Usage: <signal type> <pid>\n");
+    if(argc != 3) {
+        printf("Usage: <signal type> <pid>\n");
+        exit(0);
+    }
     pid_t pid;
     if((pid = atoi(argv[2])) == 0 && argv[2][0] != '0'){
-        print("Usage: <signal type> <pid>\n");
+        printf("Usage: <signal type> <pid>\n");
+        exit(0);
     }
-    if(strcmp(argv[0], "-u")){
+    if(strcmp(argv[1], "-u") == 0){
         kill(pid, SIGUSR1);
     }
-    else if (strcmp(argv[0], "-i")) {
+    else if (strcmp(argv[1], "-i") == 0) {
         kill(pid, SIGINT);
     }
-    else print("Usage: <signal type> <pid>\n");
+    else {
+        printf("Usage: <signal type> <pid>\n");
+        exit(0);
+    }
     return 0;
 }

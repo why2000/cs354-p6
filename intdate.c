@@ -9,7 +9,7 @@ unsigned alrm_time = 3;
 unsigned counter = 0;
 
 void handler_SIGINT(int sig){
-    printf("\nSIGINT received.\n");
+    printf("SIGINT received.\n");
     printf("SIGUSR1 was received %u times. Exiting now.\n", counter);
     exit(0);
 }
