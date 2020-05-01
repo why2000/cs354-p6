@@ -7,7 +7,7 @@
 int counter;
 
 void handler_SIGINT(int sig){
-    printf("Total number of operations successfully completed: %d\n", counter);
+    printf("\nTotal number of operations successfully completed: %d\n", counter);
     exit(0);
 }
 
