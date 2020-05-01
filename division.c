@@ -44,7 +44,7 @@ int main(int argc, char** argv){
         res = num1/num2;
         printf("%d / %d is %d with a remainder of %d\n",\
         num1, num2, res, num1 - num2*res);
-        
+        counter++;
     }
     return 0;
 }
